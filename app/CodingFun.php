@@ -2,15 +2,15 @@
 
 namespace App;
 
+use App\Exceptions\InvalidArgumentException;
 use App\Exceptions\InvalidNumberException;
 
 class CodingFun
 {
     public function getFibonacciSequence($resultArraySize)
     {
-        if (!is_numeric($resultArraySize)) {
-            // TODO Generic Exception
-            throw new \Exception('Array size must be numeric');
+        if (is_string($resultArraySize)) {
+            throw new InvalidArgumentException('Array size is not a number!');
         }
 
         if ($resultArraySize < 0) {
@@ -31,11 +31,6 @@ class CodingFun
 
     public function getCustomerBalances($customerTransactions)
     {
-        if (!is_array($customerTransactions)) {
-            // TODO: Generic Exception
-            throw new \Exception('Transaction must be an array');
-        }
-
         $result = [];
         foreach ($customerTransactions as $customerTransaction) {
             $customerTransactionParts = explode('=', $customerTransaction);
