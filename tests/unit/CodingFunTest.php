@@ -41,28 +41,28 @@ class FibonacciTest extends \PHPUnit\Framework\TestCase
             'Result is incorrect.'
         );
     }
-//
-//    public function testGetLotteryWinningsForSoleWinner()
-//    {
-//        $codingFun = new \App\Fibonacci();
-//
-//        $totalWinnings = 212000;
-//        $winningNumber = 123777;
-//        $players = [
-//            'matt' => 187658,
-//            'kate' => 898722,
-//            'andy' => 772782,
-//            'jeremy' => 882992,
-//            'christian' => 900220,
-//            'eva' => 123777,
-//            'jenny' => 989772,
-//            'corrie' => 123456
-//        ];
-//
-//        $result = $codingFun->getLotteryWinnings($totalWinnings, $winningNumber, $players);
-//
-//        $this->assertEquals(['eva' => 212000], $result, 'Result is incorrect.');
-//    }
+
+    public function testGetLotteryWinningsForSoleWinner()
+    {
+        $codingFun = new \App\Fibonacci();
+
+        $totalWinnings = 212000;
+        $winningNumber = 123777;
+        $players = [
+            'matt' => 187658,
+            'kate' => 898722,
+            'andy' => 772782,
+            'jeremy' => 882992,
+            'christian' => 900220,
+            'eva' => 123777,
+            'jenny' => 989772,
+            'corrie' => 123456
+        ];
+
+        $result = $codingFun->getLotteryWinnings($totalWinnings, $winningNumber, $players);
+
+        $this->assertEquals(['eva' => 212000], $result, 'Result is incorrect.');
+    }
 //
 //    public function testGetLotteryWinningsForMultipleWinners()
 //    {
