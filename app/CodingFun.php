@@ -13,18 +13,15 @@ class CodingFun
             throw new \Exception('Array size must be numeric');
         }
 
-        if ($resultArraySize === 0) {
-            return [0];
-        }
-
-        if ($resultArraySize === 1) {
-            return [0, 1];
-        }
-
-        $result = [0, 1];
-        for ($i = 2; $i < $resultArraySize; $i++) {
+        $result = [];
+        for ($i = 0; $i < $resultArraySize; $i++) {
+            if ($i < 2) {
+                $result[$i] = $i;
+                continue;
+            }
             $result[$i] = $result[$i - 1] + $result[$i - 2];
         }
+
         return $result;
     }
 

@@ -24,8 +24,9 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         return [
             [10, [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]],
             [5, [0, 1, 1, 2, 3]],
-            [0, [0]],
-            [1, [0, 1]]
+            [1, [0]],
+            [2, [0, 1]],
+            [0, []]
         ];
     }
 
