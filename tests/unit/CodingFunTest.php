@@ -1,11 +1,11 @@
 <?php
 
 
-class FibonacciTest extends \PHPUnit\Framework\TestCase
+class CodingFunTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetFibonacciSequence()
     {
-        $codingFun = new \App\Fibonacci();
+        $codingFun = new \App\CodingFun();
 
         $resultArraySize = 10;
 
@@ -16,7 +16,7 @@ class FibonacciTest extends \PHPUnit\Framework\TestCase
 
     public function testGetCustomerBalances()
     {
-        $codingFun = new \App\Fibonacci();
+        $codingFun = new \App\CodingFun();
 
         $customerTransactions = [
             'bill=9898',
@@ -44,7 +44,7 @@ class FibonacciTest extends \PHPUnit\Framework\TestCase
 
     public function testGetLotteryWinningsForSoleWinner()
     {
-        $codingFun = new \App\Fibonacci();
+        $codingFun = new \App\CodingFun();
 
         $totalWinnings = 212000;
         $winningNumber = 123777;
@@ -63,34 +63,34 @@ class FibonacciTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(['eva' => 212000], $result, 'Result is incorrect.');
     }
-//
-//    public function testGetLotteryWinningsForMultipleWinners()
-//    {
-//        $codingFun = new \App\Fibonacci();
-//
-//        $totalWinnings = 2557767;
-//        $winningNumber = 223344;
-//        $players = [
-//            'matt' => 187658,
-//            'kate' => 898722,
-//            'andy' => 223344,
-//            'jeremy' => 223344,
-//            'christian' => 900220,
-//            'eva' => 123777,
-//            'jenny' => 223344,
-//            'corrie' => 123456
-//        ];
-//
-//        $result = $codingFun->getLotteryWinnings($totalWinnings, $winningNumber, $players);
-//
-//        $this->assertEquals(
-//            [
-//                'andy' => 852589,
-//                'jenny' => 852589,
-//                'jeremy' => 852589
-//            ],
-//            $result,
-//            'Result is incorrect.'
-//        );
-//    }
+
+    public function testGetLotteryWinningsForMultipleWinners()
+    {
+        $codingFun = new \App\CodingFun();
+
+        $totalWinnings = 2557767;
+        $winningNumber = 223344;
+        $players = [
+            'matt' => 187658,
+            'kate' => 898722,
+            'andy' => 223344,
+            'jeremy' => 223344,
+            'christian' => 900220,
+            'eva' => 123777,
+            'jenny' => 223344,
+            'corrie' => 123456
+        ];
+
+        $result = $codingFun->getLotteryWinnings($totalWinnings, $winningNumber, $players);
+
+        $this->assertEquals(
+            [
+                'andy' => 852589,
+                'jenny' => 852589,
+                'jeremy' => 852589
+            ],
+            $result,
+            'Result is incorrect.'
+        );
+    }
 }

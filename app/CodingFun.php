@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Fibonacci
+class CodingFun
 {
     public function getFibonacciSequence($resultArraySize)
     {
