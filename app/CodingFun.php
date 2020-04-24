@@ -2,10 +2,16 @@
 
 namespace App;
 
+use PHPUnit\Runner\Exception;
+
 class CodingFun
 {
     public function getFibonacciSequence($resultArraySize)
     {
+        if (!is_numeric($resultArraySize)) {
+            // TODO Generic Exception
+            throw new \Exception('Array size must be numeric');
+        }
         $result = [0, 1];
         for ($i = 2; $i < $resultArraySize; $i++) {
             $result[$i] = $result[$i - 1] + $result[$i - 2];
@@ -39,21 +45,21 @@ class CodingFun
 
         foreach ($players as $name => $number) {
             if ($number === $winningNumber) {
-                $winners[$name] = $totalWinnings;
+                $winners[] = $name;
                 $numberOfWinners++;
             }
         }
 
         $eachWinnerPrize = $totalWinnings / $numberOfWinners;
 
-        ksort($winners);
+        sort($winners);
 
-        $finalWinnersWithAmount = [];
+        $winnerWithPrize = [];
 
-        foreach ($winners as $name => $totalWinnings) {
-            $finalWinnersWithAmount[$name] = $eachWinnerPrize;
+        foreach ($winners as $winner) {
+            $winnerWithPrize[$winner] = $eachWinnerPrize;
         }
 
-        return $finalWinnersWithAmount;
+        return $winnerWithPrize;
     }
 }
