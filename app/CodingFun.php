@@ -12,6 +12,15 @@ class CodingFun
             // TODO Generic Exception
             throw new \Exception('Array size must be numeric');
         }
+
+        if ($resultArraySize === 0) {
+            return [0];
+        }
+
+        if ($resultArraySize === 1) {
+            return [0, 1];
+        }
+
         $result = [0, 1];
         for ($i = 2; $i < $resultArraySize; $i++) {
             $result[$i] = $result[$i - 1] + $result[$i - 2];

@@ -1,17 +1,32 @@
 <?php
 
-
 class CodingFunTest extends \PHPUnit\Framework\TestCase
 {
-    public function testGetFibonacciSequence()
+    /**
+     * @dataProvider fibonacciSequenceNumberProvider
+     * @param $arraySize
+     * @param $fibSequence
+     * @throws Exception
+     */
+    public function testGetFibonacciSequence($arraySize, $fibSequence): void
     {
         $codingFun = new \App\CodingFun();
 
-        $resultArraySize = 10;
+        $resultArraySize = $arraySize;
 
         $result = $codingFun->getFibonacciSequence($resultArraySize);
 
-        $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], $result, "Result is incorrect.");
+        $this->assertEquals($fibSequence, $result, "Result is incorrect.");
+    }
+
+    public function fibonacciSequenceNumberProvider(): array
+    {
+        return [
+            [10, [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]],
+            [5, [0, 1, 1, 2, 3]],
+            [0, [0]],
+            [1, [0, 1]]
+        ];
     }
 
     public function testGetCustomerBalances()
