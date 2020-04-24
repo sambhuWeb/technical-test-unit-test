@@ -48,7 +48,7 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testGetCustomerBalances()
+    public function testGetCustomerBalances(): void
     {
         $codingFun = new \App\CodingFun();
 
@@ -76,7 +76,7 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testGetLotteryWinningsForSoleWinner()
+    public function testGetLotteryWinningsForSoleWinner(): void
     {
         $codingFun = new \App\CodingFun();
 
@@ -98,7 +98,7 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(['eva' => 212000], $result, 'Result is incorrect.');
     }
 
-    public function testGetLotteryWinningsForMultipleWinners()
+    public function testGetLotteryWinningsForMultipleWinners(): void
     {
         $codingFun = new \App\CodingFun();
 

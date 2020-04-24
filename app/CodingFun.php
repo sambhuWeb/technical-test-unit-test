@@ -7,7 +7,7 @@ use App\Exceptions\InvalidNumberException;
 
 class CodingFun
 {
-    public function getFibonacciSequence($resultArraySize)
+    public function getFibonacciSequence($resultArraySize): array
     {
         if (is_string($resultArraySize)) {
             throw new InvalidArgumentException('Array size is not a number!');
@@ -29,7 +29,7 @@ class CodingFun
         return $result;
     }
 
-    public function getCustomerBalances($customerTransactions)
+    public function getCustomerBalances($customerTransactions): array
     {
         $result = [];
         foreach ($customerTransactions as $customerTransaction) {
@@ -48,7 +48,7 @@ class CodingFun
         return $result;
     }
 
-    public function getLotteryWinnings($totalWinnings, $winningNumber, $players)
+    public function getLotteryWinnings($totalWinnings, $winningNumber, $players): array
     {
         $winners = [];
         $numberOfWinners = 0;
