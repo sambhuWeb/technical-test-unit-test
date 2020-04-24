@@ -2,7 +2,7 @@
 
 namespace App;
 
-use PHPUnit\Runner\Exception;
+use App\Exceptions\InvalidNumberException;
 
 class CodingFun
 {
@@ -11,6 +11,10 @@ class CodingFun
         if (!is_numeric($resultArraySize)) {
             // TODO Generic Exception
             throw new \Exception('Array size must be numeric');
+        }
+
+        if ($resultArraySize < 0) {
+            throw new InvalidNumberException('Number should not be negative');
         }
 
         $result = [];
