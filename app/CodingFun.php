@@ -21,6 +21,11 @@ class CodingFun
 
     public function getCustomerBalances($customerTransactions)
     {
+        if (!is_array($customerTransactions)) {
+            // TODO: Generic Exception
+            throw new \Exception('Transaction must be an array');
+        }
+
         $result = [];
         foreach ($customerTransactions as $customerTransaction) {
             $customerTransactionParts = explode('=', $customerTransaction);
