@@ -19,6 +19,15 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($fibSequence, $result, "Result is incorrect.");
     }
 
+    public function testInvalidNumberExceptionForNegativeNumber(): void
+    {
+        $this->expectException(\App\Exceptions\InvalidNumberException::class);
+
+        $codingFun = new \App\CodingFun();
+
+        $codingFun->getFibonacciSequence(-1);
+    }
+
     public function fibonacciSequenceNumberProvider(): array
     {
         return [
