@@ -28,6 +28,15 @@ class CodingFunTest extends \PHPUnit\Framework\TestCase
         $codingFun->getFibonacciSequence(-1);
     }
 
+    public function testInvalidArgumentExceptionForNonNumericArraySize(): void
+    {
+        $this->expectException(\App\Exceptions\InvalidArgumentException::class);
+
+        $codingFun = new \App\CodingFun();
+
+        $codingFun->getFibonacciSequence('1');
+    }
+
     public function fibonacciSequenceNumberProvider(): array
     {
         return [
