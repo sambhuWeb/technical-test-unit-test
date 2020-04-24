@@ -34,6 +34,26 @@ class CodingFun
 
     public function getLotteryWinnings($totalWinnings, $winningNumber, $players)
     {
-        //
+        $winners = [];
+        $numberOfWinners = 0;
+
+        foreach ($players as $name => $number) {
+            if ($number === $winningNumber) {
+                $winners[$name] = $totalWinnings;
+                $numberOfWinners++;
+            }
+        }
+
+        $eachWinnerPrize = $totalWinnings / $numberOfWinners;
+
+        ksort($winners);
+
+        $finalWinnersWithAmount = [];
+
+        foreach ($winners as $name => $totalWinnings) {
+            $finalWinnersWithAmount[$name] = $eachWinnerPrize;
+        }
+
+        return $finalWinnersWithAmount;
     }
 }
